@@ -40,6 +40,19 @@ Now open chrome and paste in the navigation bar:
 ```console
 http://127.0.0.1:5000
 ```
+### Troubles with WEb3 & Flask
+
+You may get an error with command
+```console
+flask run
+```
+Just go to "src/app.py" and on the 11th line of code change {port} to ganache default port which is set in your ganache application (default is 7545), so that it should look like
+```code
+web3 = Web3(Web3.HTTPProvider(f'http://127.0.0.1:7545')) 
+```
+
+
+
 Note: the port can be set in app.py. 5000 is written by default in app.py script. 
 Now you have to access to your matamask account. You should import your matamask accounts by inserting the private keys of your ganache blockchain. \
 Guidelines: https://www-geeksforgeeks-org.translate.goog/how-to-set-up-ganche-with-metamask/?_x_tr_sl=en&_x_tr_tl=it&_x_tr_hl=it&_x_tr_pto=sc
